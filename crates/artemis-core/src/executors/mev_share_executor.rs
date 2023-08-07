@@ -37,6 +37,8 @@ impl MevshareExecutor {
 impl Executor<Vec<SendBundleRequest>> for MevshareExecutor {
     /// Send bundles to the matchmaker.
     async fn execute(&self, action: Vec<SendBundleRequest>) -> Result<()> {
+        println!("ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+        println!("{:?}", client);
         let bodies = stream::iter(action)
             .map(|bundle| {
                 let client = &self.mev_share_client;
