@@ -43,8 +43,6 @@ impl Executor<Vec<SendBundleRequest>> for MevshareExecutor {
                 async move { client.send_bundle(bundle).await }
             })
             .buffer_unordered(5);
-        println!("ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        println!("{:?}", &self.mev_share_client);
 
         bodies
             .for_each(|b| async {
